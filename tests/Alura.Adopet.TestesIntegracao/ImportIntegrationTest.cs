@@ -1,9 +1,9 @@
 ﻿using Alura.Adopet.Console.Comandos;
 using Alura.Adopet.Console.Modelos;
 using Alura.Adopet.Console.Servicos;
-using Alura.Adopet.Testes.Builder;
+using Alura.Adopet.TestesIntegracao.Builder;
 
-namespace Alura.Adopet.Testes
+namespace Alura.Adopet.TestesIntegracao
 {
     public class ImportIntegrationTest
     {
