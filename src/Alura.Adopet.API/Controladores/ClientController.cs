@@ -10,13 +10,13 @@ using System.IO;
 namespace Alura.Adopet.API.Controladores
 {
     [ApiController]
-    [Route("/pet/")]
-    public class PetController:ControllerBase
-    {     
+    [Route("/cliente/")]
+    public class ClientController : ControllerBase
+    {
 
         [HttpGet]
         [Route("list")]
-        public async Task<IResult> ListaDePet()
+        public async Task<IResult> ListaDeClientes()
         {
             //
             //var _logger = new LoggerConfiguration()
@@ -31,30 +31,30 @@ namespace Alura.Adopet.API.Controladores
             try
             {
                 DataBaseContext _context = new(options);
-                var listaDePet = await _context.Pets.ToListAsync();
+                var listaDeClientes = await _context.Clientes.ToListAsync();
                 //_logger.Information("Listagem gerada com sucesso!");
-                return Results.Ok(listaDePet);
+                return Results.Ok(listaDeClientes);
             }
             catch (Exception ex)
             {
-                //_logger.Error(ex,"Ocorreu uma Execeção:", ex.Message);
+                //_logger.Error(ex, "Ocorreu uma Execeção:", ex.Message);
             }
             return Results.Ok();
         }
 
         [HttpPost]
         [Route("add")]
-        public async Task<IResult> CadatrarPet([FromBody]Pet pet)
+        public async Task<IResult> CadatrarClientes([FromBody] Cliente cliente)
         {
             IConfigurationRoot configuration = new ConfigurationBuilder()
            .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
            .AddJsonFile("appsettings.json")
            .Build();
 
-            string _data = DateTime.Now.ToString("yyyy-MM-dd_HH");
-            string? path = configuration["LoggerBasePath"];
-            string? template = configuration["LoggerFileTemplate"];
-            string filename = $@"{path}\{_data}.adopet.log";
+            //string _data = DateTime.Now.ToString("yyyy-MM-dd_HH");
+            //string? path = configuration["LoggerBasePath"];
+            //string? template = configuration["LoggerFileTemplate"];
+            //string filename = $@"{path}\{_data}.adopet.log";
 
             //Log.Logger = new LoggerConfiguration()
             //              .MinimumLevel.Override("Microsoft.AspNetCore", LogEventLevel.Information)
@@ -71,19 +71,19 @@ namespace Alura.Adopet.API.Controladores
             try
             {
                 DataBaseContext _context = new(options);
-                await _context.Pets.AddAsync(pet);
+                await _context.Clientes.AddAsync(cliente);
                 _context.SaveChanges();
-                //Log.Information("Pet cadastrado com sucesso!");
-               
-                return Results.Ok("Pet cadastrado com sucesso!");
+                Log.Information("Cliente cadastrado com sucesso!");
+
+                return Results.Ok("Cliente cadastrado com sucesso!");
             }
             catch (Exception ex)
             {
-                //Log.Error(ex,"Ocorreu uma Execeção:", ex.Message);
+                //Log.Error(ex, "Ocorreu uma Execeção:", ex.Message);
             }
             finally
             {
-               // Log.CloseAndFlush();
+                //Log.CloseAndFlush();
             }
 
 

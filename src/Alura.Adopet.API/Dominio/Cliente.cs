@@ -14,6 +14,6 @@ namespace Alura.Adopet.API.Dominio
         public string Nome { get; set; } = string.Empty;
         public string CPF { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
-        //public ICollection<Pet>? Pets { get; set; }
+        
     }
 }
