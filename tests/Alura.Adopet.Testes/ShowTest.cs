@@ -1,6 +1,6 @@
 ﻿using Alura.Adopet.Console.Comandos;
 using Alura.Adopet.Console.Modelos;
-using Alura.Adopet.Console.Util;
+using Alura.Adopet.Console.Results;
 using Alura.Adopet.Testes.Builder;
 
 namespace Alura.Adopet.Testes

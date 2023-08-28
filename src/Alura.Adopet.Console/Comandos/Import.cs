@@ -1,5 +1,6 @@
 ﻿using Alura.Adopet.Console.Modelos;
-using Alura.Adopet.Console.Servicos;
+using Alura.Adopet.Console.Servicos.Arquivos;
+using Alura.Adopet.Console.Servicos.Http;
 using Alura.Adopet.Console.Util;
 using FluentResults;
 

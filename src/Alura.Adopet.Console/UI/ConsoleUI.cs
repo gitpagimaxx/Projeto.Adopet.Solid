@@ -1,5 +1,5 @@
 ﻿using Alura.Adopet.Console.Comandos;
-using Alura.Adopet.Console.Util;
+using Alura.Adopet.Console.Results;
 using FluentResults;
 
 namespace Alura.Adopet.Console.UI

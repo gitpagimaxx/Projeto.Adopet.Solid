@@ -10,7 +10,7 @@ namespace Alura.Adopet.Testes
             //Arrange
             string[] args = { "import", "lista.csv" };
             //Act
-            var comando = FabricaDeComandos.CriarComando(args);
+            var comando = ComandosFactory.CriarComando(args);
             //Assert
             Assert.IsType<Import>(comando);
         }
@@ -21,7 +21,7 @@ namespace Alura.Adopet.Testes
             //Arrange
             string[] args = { "invalid", "lista.csv" };
             //Act
-            var comando = FabricaDeComandos.CriarComando(args);
+            var comando = ComandosFactory.CriarComando(args);
             //Assert
             Assert.Null(comando);
         }
@@ -31,7 +31,7 @@ namespace Alura.Adopet.Testes
         {
             //Arrange           
             //Act
-            var comando = FabricaDeComandos.CriarComando(null);
+            var comando = ComandosFactory.CriarComando(null);
             //Assert
             Assert.Null(comando);
         }
@@ -42,7 +42,7 @@ namespace Alura.Adopet.Testes
             //Arrange
             string[] args = { };
             //Act
-            var comando = FabricaDeComandos.CriarComando(args);
+            var comando = ComandosFactory.CriarComando(args);
             //Assert
             Assert.Null(comando);
         }
