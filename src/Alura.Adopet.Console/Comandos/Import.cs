@@ -1,8 +1,9 @@
 ﻿using Alura.Adopet.Console.Modelos;
 using Alura.Adopet.Console.Servicos.Arquivos;
 using Alura.Adopet.Console.Servicos.Http;
-using Alura.Adopet.Console.Util;
+using Alura.Adopet.Console.Atributos;
 using FluentResults;
+using Alura.Adopet.Console.Results;
 
 namespace Alura.Adopet.Console.Comandos
 {

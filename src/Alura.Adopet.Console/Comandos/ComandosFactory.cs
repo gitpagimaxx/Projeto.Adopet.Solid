@@ -1,4 +1,4 @@
-﻿using Alura.Adopet.Console.Servicos;
+﻿using Alura.Adopet.Console.Servicos.Http;
 using Alura.Adopet.Console.Servicos.Arquivos;
 
 namespace Alura.Adopet.Console.Comandos;
