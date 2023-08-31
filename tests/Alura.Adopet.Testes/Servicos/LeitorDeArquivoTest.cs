@@ -10,8 +10,11 @@ public class LeitorDeArquivoTest : IDisposable
     {
         //Setup
         string linha = "456b24f4-19e2-4423-845d-4a80e8854a41;Lima Limão;1";
-        File.WriteAllText("lista.csv", linha);
-        caminhoArquivo = Path.GetFullPath("lista.csv");
+
+        string nomeRandomico = $"{Guid.NewGuid()}.csv";
+
+        File.WriteAllText(nomeRandomico, linha);
+        caminhoArquivo = Path.GetFullPath(nomeRandomico);
     }
 
     [Fact]
