@@ -24,7 +24,7 @@ namespace Alura.Adopet.Console.Comandos
             }
             catch (Exception exception)
             {
-               return Task.FromResult(Result.Fail(new Error("Importação falhou!").CausedBy(exception)));
+               return Task.FromResult(Result.Fail(new Error("Exibição do arquivo falhou!").CausedBy(exception)));
             }
         }
 
