@@ -25,6 +25,4 @@ public class ListTest
         var resultado = (SuccessWithPets)retorno.Successes[0];
         Assert.Single(resultado.Data);
     }
-
-
 }

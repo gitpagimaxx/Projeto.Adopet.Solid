@@ -16,6 +16,50 @@ public class FabricaDeComandosTest
     }
 
     [Fact]
+    public void DadoUmParametroDeveRetornarUmTipoList()
+    {
+        //Arrange
+        string[] args = { "list", "lista.csv" };
+        //Act
+        var comando = ComandosFactory.CriarComando(args);
+        //Assert
+        Assert.IsType<List>(comando);
+    }
+
+    [Fact]
+    public void DadoUmParametroDeveRetornarUmTipoShow()
+    {
+        //Arrange
+        string[] args = { "show", "lista.csv" };
+        //Act
+        var comando = ComandosFactory.CriarComando(args);
+        //Assert
+        Assert.IsType<Show>(comando);
+    }
+
+    [Fact]
+    public void DadoUmParametroDeveRetornarUmTipoHelp()
+    {
+        //Arrange
+        string[] args = { "help", "lista.csv" };
+        //Act
+        var comando = ComandosFactory.CriarComando(args);
+        //Assert
+        Assert.IsType<Help>(comando);
+    }
+
+    [Fact]
+    public void DadoUmParametroDeveRetornarTipoImportClientes()
+    {
+        //Arrange
+        string[] args = { "import-clientes", "lista.csv" };
+        //Act
+        var comando = ComandosFactory.CriarComando(args);
+        //Assert
+        Assert.IsType<ImportClientes>(comando);
+    }
+
+    [Fact]
     public void DadoUmParametroInvalidoDeveRetornarNulo()
     {
         //Arrange
@@ -46,7 +90,4 @@ public class FabricaDeComandosTest
         //Assert
         Assert.Null(comando);
     }
-
-
-
 }

@@ -29,6 +29,4 @@ public class ShowTest
         Assert.Equal("Exibição do arquivo realizada com sucesso!",
             sucesso.Message);
     }
-
-
 }
